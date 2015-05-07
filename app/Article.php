@@ -7,7 +7,7 @@ class Article extends Model {
 	protected $fillable = [
         'title',
         'body',
-        'published-at'
+        'published_at'
     ];
 
 }
