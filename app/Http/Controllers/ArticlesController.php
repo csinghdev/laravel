@@ -7,7 +7,6 @@ use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
 use Illuminate\HttpResponse;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Carbon\Carbon;
 
 class ArticlesController extends Controller {
@@ -29,13 +28,8 @@ class ArticlesController extends Controller {
         return view('articles.create');
     }
 
-<<<<<<< HEAD
-    public function store(Request $request)
-=======
-    public function store(Requests\ArticleRequest $request)
->>>>>>> editPage
+    public function store(ArticleRequest $request)
     {
-        $this->validate($request, ['title' => 'required', 'body' => 'required']);
         Article::create($request->all());
 
         return redirect('articles');
