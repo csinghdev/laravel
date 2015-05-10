@@ -1,5 +1,3 @@
-<!--- temporary form input --->
-    {!! Form::hidden('user_id', 1) !!}
 
 <!--- form input --->
 <div class="form-group">
