@@ -10,6 +10,8 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 
+Route::model('articles', 'App\Article');
+
 Route::get('foo', ['middleware' => 'manager', function()
 {
     return 'this page can only be viewed by manager';
