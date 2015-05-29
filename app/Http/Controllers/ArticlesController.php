@@ -37,7 +37,7 @@ class ArticlesController extends Controller {
     {
         Auth::user()->articles()->create($request->all());
 
-        flash()->success('Your article has been created !');
+        flash()->overlay('Your article has been successfully created !', 'Good Job');
 
         return redirect('articles');
     }
