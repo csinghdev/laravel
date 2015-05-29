@@ -1,0 +1,13 @@
+{
+  "name": "laravel",
+  "version": "0.0.0",
+  "homepage": "https://github.com/csinghdev/laravel",
+  "authors": [
+    "Chandresh <chandresh989@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.4",
+    "fontawesome": "~4.3.0"
+  }
+}
