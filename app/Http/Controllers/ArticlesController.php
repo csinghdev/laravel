@@ -2,6 +2,7 @@
 
 use Auth;
 use App\Article;
+use App\Tag;
 use App\Http\Requests;
 use App\Http\Requests\ArticleController;
 use App\Http\Requests\ArticleRequest;
@@ -30,12 +31,15 @@ class ArticlesController extends Controller {
 
     public function create()
     {
-        return view('articles.create');
+        $tags = Tag::lists('name', 'id');
+        return view('articles.create', compact('tags'));
     }
 
     public function store(ArticleRequest $request)
     {
-        Auth::user()->articles()->create($request->all());
+        $article = Auth::user()->articles()->create($request->all());
+
+        $article->tags()->attach($request->input('tag_list'));
 
         flash()->overlay('Your article has been successfully created !', 'Good Job');
 
@@ -44,7 +48,9 @@ class ArticlesController extends Controller {
 
     public function edit(Article $article)
     {
-        return view('articles.edit', compact('article'));
+        $tags = Tag::lists('name', 'id');
+
+        return view('articles.edit', compact('article','tags'));
     }
 
     public function update(Article $article, ArticleRequest $request)
