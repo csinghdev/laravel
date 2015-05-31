@@ -13,6 +13,8 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="/articles">Articles</a></li>
+                <li><a href="/about">About Me</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

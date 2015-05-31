@@ -1,7 +1,11 @@
 <?php
 
 Route::get('/', function() {
-	return 'Home Page';
+    return Redirect::to('articles');;
+});
+
+Route::get('home', function() {
+    return Redirect::to('articles');;
 });
 
 Route::get('about', 'PagesController@about');
